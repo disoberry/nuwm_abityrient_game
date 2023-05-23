@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=3 uid="uid://b1wsom7ldcnk5"]
+
+[ext_resource type="Script" path="res://scritps/menu.gd" id="1_3l5in"]
+[ext_resource type="StyleBox" uid="uid://bxjg8a7774ikb" path="res://styles/menu_button_style.tres" id="2_xojlq"]
+[ext_resource type="StyleBox" uid="uid://dhdeyuvnrgk61" path="res://styles/menu_button_hover_style.tres" id="3_3r4ck"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fr406"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gs4n7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sc6eu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8rbgh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a2ipb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0g2hu"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -44.0
+offset_top = 27.0
+offset_right = -44.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3l5in")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 44.0
+offset_top = -55.0
+offset_right = 44.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("2_xojlq")
+theme_override_styles/hover = ExtResource("3_3r4ck")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fr406")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gs4n7")
+text = "Start"
+
+[node name="ExtrasButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("2_xojlq")
+theme_override_styles/hover = ExtResource("3_3r4ck")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_sc6eu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8rbgh")
+text = "Extras"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("2_xojlq")
+theme_override_styles/hover = ExtResource("3_3r4ck")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_a2ipb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0g2hu")
+text = "Exit"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExtrasButton" to="." method="_on_extras_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

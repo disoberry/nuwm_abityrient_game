@@ -1,0 +1,15 @@
+~ table
+set IsDr.is_dialogue_running = "true"
+You: This is the table.
+set IsDr.is_dialogue_running = "false"
+=> END
+
+
+~ door
+set IsDr.is_dialogue_running = "true"
+You: Wanna come in?
+- Yeah!
+	do TransitionScene.change_scene("res://scenes/World_2.tscn")
+- Not now.
+set IsDr.is_dialogue_running = "false"
+=> END

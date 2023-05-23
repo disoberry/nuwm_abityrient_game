@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://bwk1rfb4cvyyy"]
+
+[ext_resource type="PackedScene" uid="uid://2rcoag4y0i20" path="res://scenes/tile_map_main.tscn" id="1_wgi0q"]
+[ext_resource type="PackedScene" uid="uid://b43jbavngj3yx" path="res://scenes/actionable.tscn" id="2_drhsj"]
+[ext_resource type="Resource" uid="uid://cexjtgxuq4fi5" path="res://dialogues/table.dialogue" id="3_28tgr"]
+[ext_resource type="PackedScene" uid="uid://ud1hphh75ict" path="res://scenes/Player.tscn" id="4_twsme"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7s4xg"]
+size = Vector2(52.75, 18.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y0yre"]
+size = Vector2(16, 23)
+
+[node name="World" type="Node2D"]
+position = Vector2(630, 360)
+scale = Vector2(2, 2)
+
+[node name="walls\'n\'background" parent="." instance=ExtResource("1_wgi0q")]
+scale = Vector2(2, 2)
+layer_0/tile_data = PackedInt32Array(-131077, 0, 19, -65541, 0, 19, -5, 0, 19, 65531, 0, 19, 131067, 0, 19, 196603, 0, 19, 262139, 131072, 19, -196613, 131072, 19, -262149, 0, 18, -262148, 65536, 18, -262147, 65536, 18, -262146, 65536, 18, -262145, 65536, 18, -327680, 65536, 18, 327676, 65536, 20, 327677, 65536, 20, 327678, 65536, 20, 327679, 65536, 20, 262144, 65536, 20, 327675, 0, 20, -196612, 65536, 19, -131076, 65536, 19, -65540, 65536, 19, -4, 65536, 19, 65532, 65536, 19, 131068, 65536, 19, 196604, 65536, 19, 262140, 65536, 19, 262141, 65536, 19, 196605, 65536, 19, 131069, 65536, 19, 65533, 65536, 19, -3, 65536, 19, -65539, 65536, 19, -131075, 65536, 19, -196611, 65536, 19, -196610, 65536, 19, -131074, 65536, 19, -65538, 65536, 19, -2, 65536, 19, 65534, 65536, 19, 131070, 65536, 19, 196606, 65536, 19, 262142, 65536, 19, 262143, 65536, 19, 196607, 65536, 19, 131071, 65536, 19, 65535, 65536, 19, -1, 65536, 19, -65537, 65536, 19, -131073, 65536, 19, -196609, 65536, 19, -262144, 65536, 19, -196608, 65536, 19, -131072, 65536, 19, -65536, 65536, 19, 0, 65536, 19, 65536, 65536, 19, 131072, 65536, 19, 196608, 65536, 19, 196609, 65536, 19, 131073, 65536, 19, 65537, 65536, 19, 1, 65536, 19, -65535, 65536, 19, -131071, 65536, 19, -196607, 65536, 19, -262143, 65536, 19, -262142, 65536, 19, -196606, 65536, 19, -131070, 65536, 19, -65534, 65536, 19, 2, 65536, 19, 65538, 65536, 19, 131074, 65536, 19, 196610, 65536, 19, 196611, 65536, 19, 131075, 65536, 19, 65539, 65536, 19, 3, 65536, 19, -65533, 65536, 19, -131069, 65536, 19, -196605, 65536, 19, -262141, 65536, 19, 262145, 65536, 19, -327679, 65536, 18, -327678, 65536, 18, -327677, 65536, 18, -327676, 65536, 18, 262147, 65536, 20, 262148, 65536, 20, 262149, 131072, 20, -327675, 131072, 18, -262139, 131072, 19, -196603, 131072, 19, -131067, 131072, 19, -65531, 131072, 19, 5, 131072, 19, 65541, 131072, 19, 131077, 131072, 19, 196613, 131072, 19, -262140, 65536, 19, -196604, 65536, 19, -65532, 65536, 19, 4, 65536, 19, 65540, 65536, 19, 131076, 65536, 19, 196612, 65536, 19, -131068, 65536, 19)
+
+[node name="furniture" parent="." instance=ExtResource("1_wgi0q")]
+scale = Vector2(2, 2)
+layer_0/tile_data = PackedInt32Array(-131075, 458752, 23, -65539, 393216, 23, -262141, 262144, 24, 65533, 458752, 23, 131069, 393216, 23, 262145, 262144, 22, 262146, 262144, 18, 262144, 393216, 18, -196609, 65536, 24, -262144, 65536, 24, -196605, 458752, 23, 3, 458752, 23, 65539, 393216, 23, -131069, 393216, 23, -196611, 262144, 24, -262143, 65536, 24)
+
+[node name="table_action" parent="furniture" instance=ExtResource("2_drhsj")]
+dialogue_resource = ExtResource("3_28tgr")
+dialogue_start = "table"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="furniture/table_action"]
+position = Vector2(8.125, -54.625)
+shape = SubResource("RectangleShape2D_7s4xg")
+
+[node name="door_action" parent="furniture" instance=ExtResource("2_drhsj")]
+dialogue_resource = ExtResource("3_28tgr")
+dialogue_start = "door"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="furniture/door_action"]
+position = Vector2(24, 68.5)
+shape = SubResource("RectangleShape2D_y0yre")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_twsme")]
+position = Vector2(1.5, -5.5)
