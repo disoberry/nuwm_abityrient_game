@@ -1,8 +1,9 @@
-[gd_scene load_steps=31 format=3 uid="uid://ud1hphh75ict"]
+[gd_scene load_steps=33 format=3 uid="uid://ud1hphh75ict"]
 
 [ext_resource type="Texture2D" uid="uid://t2g2uogdc87s" path="res://assets/character_texture_compresed.tres" id="1_bd2hi"]
 [ext_resource type="Script" path="res://scritps/Player.gd" id="1_fscde"]
 [ext_resource type="Script" path="res://scritps/IsDR.gd" id="3_2vuj5"]
+[ext_resource type="Texture2D" uid="uid://dbjhtt7kxux25" path="res://assets/E_hint.png" id="4_huboe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ied3"]
 size = Vector2(10, 4)
@@ -241,6 +242,9 @@ transitions = ["idle", "walk", SubResource("AnimationNodeStateMachineTransition_
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xxey0"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_30j17"]
+texture = ExtResource("4_huboe")
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(2, 2)
 script = ExtResource("1_fscde")
@@ -282,3 +286,11 @@ shape = SubResource("CircleShape2D_xxey0")
 
 [node name="IsDR" type="Node" parent="."]
 script = ExtResource("3_2vuj5")
+
+[node name="Hint_E" type="Label" parent="."]
+offset_left = -32.0
+offset_top = -20.0
+offset_right = 36.0
+offset_bottom = -6.0
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_30j17")

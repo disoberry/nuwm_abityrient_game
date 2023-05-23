@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://2rcoag4y0i20" path="res://scenes/tile_map_main.tscn" id="1_wgi0q"]
 [ext_resource type="PackedScene" uid="uid://b43jbavngj3yx" path="res://scenes/actionable.tscn" id="2_drhsj"]
-[ext_resource type="Resource" uid="uid://cexjtgxuq4fi5" path="res://dialogues/table.dialogue" id="3_28tgr"]
+[ext_resource type="Resource" uid="uid://cexjtgxuq4fi5" path="res://dialogues/universal.dialogue" id="3_5jfbj"]
 [ext_resource type="PackedScene" uid="uid://ud1hphh75ict" path="res://scenes/Player.tscn" id="4_twsme"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7s4xg"]
@@ -24,7 +24,7 @@ scale = Vector2(2, 2)
 layer_0/tile_data = PackedInt32Array(-131075, 458752, 23, -65539, 393216, 23, -262141, 262144, 24, 65533, 458752, 23, 131069, 393216, 23, 262145, 262144, 22, 262146, 262144, 18, 262144, 393216, 18, -196609, 65536, 24, -262144, 65536, 24, -196605, 458752, 23, 3, 458752, 23, 65539, 393216, 23, -131069, 393216, 23, -196611, 262144, 24, -262143, 65536, 24)
 
 [node name="table_action" parent="furniture" instance=ExtResource("2_drhsj")]
-dialogue_resource = ExtResource("3_28tgr")
+dialogue_resource = ExtResource("3_5jfbj")
 dialogue_start = "table"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="furniture/table_action"]
@@ -32,8 +32,8 @@ position = Vector2(8.125, -54.625)
 shape = SubResource("RectangleShape2D_7s4xg")
 
 [node name="door_action" parent="furniture" instance=ExtResource("2_drhsj")]
-dialogue_resource = ExtResource("3_28tgr")
-dialogue_start = "door"
+dialogue_resource = ExtResource("3_5jfbj")
+dialogue_start = "doorWorld2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="furniture/door_action"]
 position = Vector2(24, 68.5)

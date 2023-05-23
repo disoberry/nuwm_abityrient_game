@@ -5,11 +5,20 @@ set IsDr.is_dialogue_running = "false"
 => END
 
 
-~ door
+~ doorWorld2
 set IsDr.is_dialogue_running = "true"
 You: Wanna come in?
 - Yeah!
 	do TransitionScene.change_scene("res://scenes/World_2.tscn")
+- Not now.
+set IsDr.is_dialogue_running = "false"
+=> END
+
+~ doorWorld1
+set IsDr.is_dialogue_running = "true"
+You: Wanna come in?
+- Yeah!
+	do TransitionScene.change_scene("res://scenes/World_1.tscn")
 - Not now.
 set IsDr.is_dialogue_running = "false"
 => END

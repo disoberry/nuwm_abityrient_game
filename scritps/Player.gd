@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
-
+@onready var hint_e_popup: Label = $Hint_E
 
 const SPEED = 5.0
 func _unhandled_input(_event: InputEvent) -> void:
@@ -13,6 +13,9 @@ func _unhandled_input(_event: InputEvent) -> void:
 
 
 func _physics_process(_delta):
+	
+	# Movement And Dialogue System
+	
 	if IsDr.is_dialogue_running == "true":
 		pass
 	else:
@@ -27,8 +30,13 @@ func _physics_process(_delta):
 			velocity.y -= 1.0
 		velocity = velocity.normalized()
 		
+		# Hint Pop-up
+		hint_e_popup.hide()
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0:
+			hint_e_popup.show()
 	
-	
+	# Animation
 	
 	if velocity == Vector2.ZERO:
 		$AnimationTree.get("parameters/playback").travel("idle")
