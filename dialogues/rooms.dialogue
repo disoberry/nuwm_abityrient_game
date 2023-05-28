@@ -33,3 +33,12 @@ You: Хочеш зайти?
 - Не зараз.
 set IsDr.is_dialogue_running = "false"
 => END!
+
+~ room3_1
+set IsDr.is_dialogue_running = "true"
+You: Двері закриті.
+- Постукати в двері.
+	- Ніхто не відповідає.
+- Полишити цю кімнату.
+set IsDr.is_dialogue_running = "false"
+=> END!

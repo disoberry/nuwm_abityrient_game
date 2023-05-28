@@ -1,11 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bprieutu6527g"]
+[gd_scene load_steps=8 format=3 uid="uid://bn8w52ip52dbh"]
 
-[ext_resource type="PackedScene" uid="uid://2rcoag4y0i20" path="res://scenes/tile_map_main.tscn" id="1_7025k"]
-[ext_resource type="PackedScene" uid="uid://ud1hphh75ict" path="res://scenes/Player.tscn" id="2_qq0k7"]
-[ext_resource type="FontVariation" uid="uid://8jvplsnuvue" path="res://styles/fontsign.tres" id="3_odquu"]
-[ext_resource type="Texture2D" uid="uid://f0rf6bn01r17" path="res://assets/sprites/old-style/03-floar-sign.png" id="4_uma7y"]
-[ext_resource type="PackedScene" uid="uid://b43jbavngj3yx" path="res://scenes/actionable.tscn" id="5_dxb6q"]
-[ext_resource type="Resource" uid="uid://st3fdm1sqgfl" path="res://dialogues/rooms.dialogue" id="6_b8i3l"]
+[ext_resource type="PackedScene" uid="uid://2rcoag4y0i20" path="res://scenes/tile_map_main.tscn" id="1_b22ig"]
+[ext_resource type="PackedScene" uid="uid://ud1hphh75ict" path="res://scenes/Player.tscn" id="2_ankuj"]
+[ext_resource type="FontVariation" uid="uid://8jvplsnuvue" path="res://styles/fontsign.tres" id="3_mcjjq"]
+[ext_resource type="Texture2D" uid="uid://f0rf6bn01r17" path="res://assets/sprites/old-style/03-floar-sign.png" id="4_sg3db"]
+[ext_resource type="PackedScene" uid="uid://b43jbavngj3yx" path="res://scenes/actionable.tscn" id="5_3e87e"]
+[ext_resource type="Resource" uid="uid://st3fdm1sqgfl" path="res://dialogues/rooms.dialogue" id="6_nvdum"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buoqc"]
 size = Vector2(32, 32.25)
@@ -14,15 +14,15 @@ size = Vector2(32, 32.25)
 position = Vector2(630, 360)
 scale = Vector2(2, 2)
 
-[node name="background" parent="." instance=ExtResource("1_7025k")]
+[node name="background" parent="." instance=ExtResource("1_b22ig")]
 scale = Vector2(2, 2)
 layer_0/tile_data = PackedInt32Array(-65540, 65536, 19, -4, 65536, 19, 65532, 65536, 19, 131068, 65536, 19, 65540, 65536, 19, 4, 65536, 19, -65532, 65536, 19, -131068, 65536, 19, -65539, 65536, 19, -3, 65536, 19, 65533, 65536, 19, 131069, 65536, 19, -65538, 65536, 19, -2, 65536, 19, 65534, 65536, 19, 131070, 65536, 19, -65537, 65536, 19, -1, 65536, 19, 65535, 65536, 19, 131071, 65536, 19, -131072, 65536, 19, -65536, 65536, 19, 0, 65536, 19, 65536, 65536, 19, -131071, 65536, 19, -65535, 65536, 19, 1, 65536, 19, 65537, 65536, 19, -131070, 65536, 19, -65534, 65536, 19, 2, 65536, 19, 65538, 65536, 19, -131069, 65536, 19, -65533, 65536, 19, 3, 65536, 19, 65539, 65536, 19, -65541, 65536, 19, -5, 65536, 19, 65531, 65536, 19, 131067, 65536, 19, -65542, 65536, 19, -6, 65536, 19, 65530, 65536, 19, 131066, 65536, 19, -131067, 65536, 19, -65531, 65536, 19, 5, 65536, 19, 65541, 65536, 19, -131066, 65536, 19, -65530, 65536, 19, 6, 65536, 19, 65542, 65536, 19, -131065, 65536, 19, -65529, 65536, 19, 7, 65536, 19, 65543, 65536, 19, -65543, 65536, 19, -7, 65536, 19, 65529, 65536, 19, 131065, 65536, 19, 196606, 65536, 19, 196607, 65536, 19, 131072, 65536, 19, 131073, 65536, 19, 131074, 65536, 19, -196603, 65536, 18, -196604, 65536, 19, -196605, 65536, 19, -196606, 65536, 18, -196607, 65536, 19, -196608, 65536, 19, -131073, 65536, 19, -131074, 65536, 18, -131075, 65536, 19, -131076, 65536, 19, -131077, 65536, 18)
 
-[node name="wall" parent="." instance=ExtResource("1_7025k")]
+[node name="wall" parent="." instance=ExtResource("1_b22ig")]
 scale = Vector2(2, 2)
 layer_0/tile_data = PackedInt32Array(-131080, 0, 18, -196600, 131072, 18, -196601, 65536, 18, -196602, 65536, 18, -196603, 262144, 22, -196604, 65536, 18, -196605, 65536, 18, -196606, 262144, 22, -196607, 65536, 18, -196608, 65536, 18, -131073, 65536, 18, -131074, 262144, 22, -131075, 65536, 18, -131076, 65536, 18, -131077, 262144, 22, -131078, 65536, 18, -131079, 65536, 18, 196601, 65536, 20, 196602, 65536, 20, 196603, 65536, 20, 196604, 65536, 20, 196605, 65536, 20, 196606, 262144, 22, 196607, 65536, 20, 131072, 65536, 20, 131073, 65536, 20, 131074, 262144, 22, 131075, 65536, 20, 131076, 65536, 20, 131077, 65536, 20, 131078, 65536, 20, 131079, 65536, 20, 131080, 131072, 20, 196600, 0, 20, 131064, 0, 19, 65528, 0, 19, -8, 0, 19, -65544, 0, 19, 65544, 131072, 19, 8, 131072, 19, -65528, 131072, 19, -131064, 131072, 19)
 
-[node name="furniture" parent="." instance=ExtResource("1_7025k")]
+[node name="furniture" parent="." instance=ExtResource("1_b22ig")]
 scale = Vector2(2, 2)
 
 [node name="FloadSign" type="Label" parent="."]
@@ -30,21 +30,21 @@ offset_left = -30.5
 offset_top = 64.0
 offset_right = 65.5
 offset_bottom = 101.0
-theme_override_fonts/font = ExtResource("3_odquu")
+theme_override_fonts/font = ExtResource("3_mcjjq")
 theme_override_font_sizes/font_size = 25
-text = "↙️5     3↗️"
+text = "↙️2     4↗️"
 
 [node name="Sign1" type="Sprite2D" parent="."]
 position = Vector2(-176, -73)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("4_uma7y")
+texture = ExtResource("4_sg3db")
 hframes = 4
 vframes = 4
 
 [node name="Sing2" type="Sprite2D" parent="."]
 position = Vector2(144, -73)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("4_uma7y")
+texture = ExtResource("4_sg3db")
 hframes = 4
 vframes = 4
 frame = 3
@@ -52,7 +52,7 @@ frame = 3
 [node name="Sign3" type="Sprite2D" parent="."]
 position = Vector2(48, -73)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("4_uma7y")
+texture = ExtResource("4_sg3db")
 hframes = 4
 vframes = 4
 frame = 2
@@ -60,51 +60,51 @@ frame = 2
 [node name="Sign4" type="Sprite2D" parent="."]
 position = Vector2(-80.5, -73)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("4_uma7y")
+texture = ExtResource("4_sg3db")
 hframes = 4
 vframes = 4
 frame = 1
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_qq0k7")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_ankuj")]
 position = Vector2(22.5, 14)
 
 [node name="Rooms" type="Node" parent="."]
 
-[node name="Room4_1" parent="Rooms" instance=ExtResource("5_dxb6q")]
+[node name="Room3_1" parent="Rooms" instance=ExtResource("5_3e87e")]
 position = Vector2(630, 360)
 scale = Vector2(2, 2)
-dialogue_resource = ExtResource("6_b8i3l")
-dialogue_start = "room4_1"
+dialogue_resource = ExtResource("6_nvdum")
+dialogue_start = "room3_1"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/Room4_1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/Room3_1"]
 position = Vector2(-144, -74)
 shape = SubResource("RectangleShape2D_buoqc")
 
-[node name="Room4_2" parent="Rooms" instance=ExtResource("5_dxb6q")]
+[node name="Room3_2" parent="Rooms" instance=ExtResource("5_3e87e")]
 position = Vector2(822, 360)
 scale = Vector2(2, 2)
-dialogue_resource = ExtResource("6_b8i3l")
-dialogue_start = "room4_2"
+dialogue_resource = ExtResource("6_nvdum")
+dialogue_start = "room3_2"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/Room4_2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/Room3_2"]
 position = Vector2(-144, -74.125)
 shape = SubResource("RectangleShape2D_buoqc")
 
-[node name="Room4_3" parent="Rooms" instance=ExtResource("5_dxb6q")]
+[node name="Room3_3" parent="Rooms" instance=ExtResource("5_3e87e")]
 position = Vector2(1078, 360)
 scale = Vector2(2, 2)
-dialogue_resource = ExtResource("6_b8i3l")
-dialogue_start = "room4_3"
+dialogue_resource = ExtResource("6_nvdum")
+dialogue_start = "room3_3"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/Room4_3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/Room3_3"]
 position = Vector2(-144, -74.125)
 shape = SubResource("RectangleShape2D_buoqc")
 
-[node name="Room4_4" parent="Rooms" instance=ExtResource("5_dxb6q")]
+[node name="Room3_4" parent="Rooms" instance=ExtResource("5_3e87e")]
 position = Vector2(983, 212)
 scale = Vector2(2, 2)
-dialogue_resource = ExtResource("6_b8i3l")
-dialogue_start = "room4_4"
+dialogue_resource = ExtResource("6_nvdum")
+dialogue_start = "room3_4"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/Room4_4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/Room3_4"]
 shape = SubResource("RectangleShape2D_buoqc")
