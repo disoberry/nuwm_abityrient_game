@@ -1,0 +1,35 @@
+~ room4_1
+set IsDr.is_dialogue_running = "true"
+You: Хочеш зайти?
+- Так!
+	do TransitionScene.change_scene("res://scenes/World_1.tscn", "4", "1")
+- Не зараз.
+set IsDr.is_dialogue_running = "false"
+=> END!
+
+~ room4_2
+set IsDr.is_dialogue_running = "true"
+You: Хочеш зайти?
+- Так!
+	do TransitionScene.change_scene("res://scenes/World_2.tscn", "4", "2")
+- Не зараз.
+set IsDr.is_dialogue_running = "false"
+=> END!
+
+~ room4_3
+set IsDr.is_dialogue_running = "true"
+You: Хочеш зайти?
+- Так!
+	do TransitionScene.change_scene("res://scenes/World_1.tscn", "4", "3")
+- Не зараз.
+set IsDr.is_dialogue_running = "false"
+=> END!
+
+~ room4_4
+set IsDr.is_dialogue_running = "true"
+You: Хочеш зайти?
+- Так!
+	do TransitionScene.change_scene("res://scenes/World_1.tscn", "4", "4")
+- Не зараз.
+set IsDr.is_dialogue_running = "false"
+=> END!

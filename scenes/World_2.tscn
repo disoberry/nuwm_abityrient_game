@@ -1,12 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1dlcs1jtt2ge"]
+[gd_scene load_steps=9 format=3 uid="uid://d1dlcs1jtt2ge"]
 
 [ext_resource type="PackedScene" uid="uid://2rcoag4y0i20" path="res://scenes/tile_map_main.tscn" id="1_ck6xp"]
 [ext_resource type="PackedScene" uid="uid://b43jbavngj3yx" path="res://scenes/actionable.tscn" id="3_78207"]
 [ext_resource type="PackedScene" uid="uid://ud1hphh75ict" path="res://scenes/Player.tscn" id="4_5krgp"]
 [ext_resource type="Resource" uid="uid://cexjtgxuq4fi5" path="res://dialogues/universal.dialogue" id="4_gb51d"]
+[ext_resource type="PackedScene" uid="uid://ca5ndcw1wjsld" path="res://scenes/ncp_scene.tscn" id="5_hgdw8"]
+[ext_resource type="Resource" uid="uid://b4bkwo33molco" path="res://dialogues/nps.dialogue" id="6_ieuqa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhwdr"]
 size = Vector2(32, 38.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ij6r0"]
+radius = 7.75403
 
 [node name="World" type="Node2D"]
 position = Vector2(630, 360)
@@ -22,7 +27,7 @@ layer_0/tile_data = PackedInt32Array(-262149, 0, 18, -262146, 262144, 22, -26214
 
 [node name="furniture" parent="." instance=ExtResource("1_ck6xp")]
 scale = Vector2(2, 2)
-layer_0/tile_data = PackedInt32Array(196605, 393216, 24, 196606, 393216, 24, 131075, 262144, 24, 131074, 262144, 24, 196611, 393216, 23, 262141, 393216, 23, 262142, 458752, 23, 196610, 458752, 23, -262140, 65536, 24, -327680, 393216, 21)
+layer_0/tile_data = PackedInt32Array(196605, 393216, 24, 196606, 393216, 24, 131075, 262144, 24, 131074, 262144, 24, 196611, 393216, 23, 262141, 393216, 23, 262142, 458752, 23, 196610, 458752, 23, -262140, 0, 23, -327680, 393216, 21, -131068, 458752, 23)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_5krgp")]
 position = Vector2(-49.5, -90)
@@ -34,3 +39,15 @@ dialogue_start = "doorWorld1"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_action"]
 position = Vector2(-48, -138.75)
 shape = SubResource("RectangleShape2D_bhwdr")
+
+[node name="NCP1_Vanya" parent="." instance=ExtResource("5_hgdw8")]
+position = Vector2(144, -80)
+frame = 4
+
+[node name="vanya_action" parent="NCP1_Vanya" instance=ExtResource("3_78207")]
+dialogue_resource = ExtResource("6_ieuqa")
+dialogue_start = "vanya"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NCP1_Vanya/vanya_action"]
+position = Vector2(-1.25, 0)
+shape = SubResource("CircleShape2D_ij6r0")

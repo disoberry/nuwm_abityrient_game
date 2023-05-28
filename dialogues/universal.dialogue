@@ -1,24 +1,24 @@
 ~ table
 set IsDr.is_dialogue_running = "true"
-You: This is the table.
+You: Це стіл.
 set IsDr.is_dialogue_running = "false"
 => END
 
 
 ~ doorWorld2
 set IsDr.is_dialogue_running = "true"
-You: Wanna come in?
-- Yeah!
-	do TransitionScene.change_scene("res://scenes/World_2.tscn")
-- Not now.
+You: Хочеш зайти?
+- Так!
+	do TransitionScene.change_scene("res://scenes/Floar_4.tscn", "4", "0")
+- Не зараз.
 set IsDr.is_dialogue_running = "false"
 => END
 
 ~ doorWorld1
 set IsDr.is_dialogue_running = "true"
-You: Wanna come in?
-- Yeah!
-	do TransitionScene.change_scene("res://scenes/World_1.tscn")
-- Not now.
+You: Хочеш зайти?
+- Так!
+	do TransitionScene.change_scene("res://scenes/Floar_4.tscn", "4", "0")
+- Не зараз.
 set IsDr.is_dialogue_running = "false"
 => END

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://fsp5j15r0vyc"]
+[gd_scene load_steps=8 format=3 uid="uid://fsp5j15r0vyc"]
 
 [ext_resource type="Script" path="res://scritps/transition_scene.gd" id="1_cs1ue"]
 
@@ -39,6 +39,43 @@ _data = {
 "dissolve": SubResource("Animation_0g782")
 }
 
+[sub_resource type="Animation" id="Animation_iesfn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextInfo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lt3ee"]
+resource_name = "dissolveroom"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextInfo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oxk41"]
+_data = {
+"RESET": SubResource("Animation_iesfn"),
+"dissolveroom": SubResource("Animation_lt3ee")
+}
+
 [node name="TransitionScene" type="CanvasLayer"]
 script = ExtResource("1_cs1ue")
 
@@ -52,7 +89,21 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
+[node name="TextInfo" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 527.0
+offset_top = 8.0
+offset_right = 799.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 33
+text = "4 Поверх 1 Кімната"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_g3gpo")
+}
+
+[node name="AnimationPlayerText" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_oxk41")
 }

@@ -1,0 +1,14 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://b4bkwo33molco"
+path="res://.godot/imported/nps.dialogue-521b1128a6d8247d249694eb895c6921.tres"
+
+[deps]
+
+source_file="res://dialogues/nps.dialogue"
+dest_files=["res://.godot/imported/nps.dialogue-521b1128a6d8247d249694eb895c6921.tres"]
+
+[params]
+

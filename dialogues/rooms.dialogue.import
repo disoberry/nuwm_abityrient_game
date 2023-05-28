@@ -1,0 +1,14 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://st3fdm1sqgfl"
+path="res://.godot/imported/rooms.dialogue-6e54ba3b3809cc3e69e18a6f0c2dcfc1.tres"
+
+[deps]
+
+source_file="res://dialogues/rooms.dialogue"
+dest_files=["res://.godot/imported/rooms.dialogue-6e54ba3b3809cc3e69e18a6f0c2dcfc1.tres"]
+
+[params]
+
