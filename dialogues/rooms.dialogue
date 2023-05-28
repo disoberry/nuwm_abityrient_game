@@ -34,11 +34,26 @@ You: Хочеш зайти?
 set IsDr.is_dialogue_running = "false"
 => END!
 
+
+
 ~ room3_1
 set IsDr.is_dialogue_running = "true"
 You: Двері закриті.
 - Постукати в двері.
 	- Ніхто не відповідає.
 - Полишити цю кімнату.
+set IsDr.is_dialogue_running = "false"
+=> END!
+
+
+
+
+
+~ corridor_3_to_4
+set IsDr.is_dialogue_running = "true"
+You: Піднятися на 4 поверх?
+- Так!
+	do TransitionScene.change_scene("res://scenes/Floar_4.tscn", "4", "0")
+- Не зараз!
 set IsDr.is_dialogue_running = "false"
 => END!

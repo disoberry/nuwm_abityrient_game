@@ -25,48 +25,51 @@ layer_0/tile_data = PackedInt32Array(-131080, 0, 18, -196600, 131072, 18, -19660
 [node name="furniture" parent="." instance=ExtResource("1_7025k")]
 scale = Vector2(2, 2)
 
-[node name="FloadSign" type="Label" parent="."]
+[node name="FolderSign" type="ColorRect" parent="."]
 offset_left = -30.5
 offset_top = 64.0
-offset_right = 65.5
-offset_bottom = 101.0
+offset_right = 9.5
+offset_bottom = 104.0
+color = Color(1, 1, 1, 0)
+
+[node name="FloadSign" type="Label" parent="FolderSign"]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 37.0
 theme_override_fonts/font = ExtResource("3_odquu")
 theme_override_font_sizes/font_size = 25
-text = "↙️5     3↗️"
+text = "↙️3     5↗️"
 
-[node name="Sign1" type="Sprite2D" parent="."]
-position = Vector2(-176, -73)
+[node name="Sign1" type="Sprite2D" parent="FolderSign"]
+position = Vector2(-145.5, -137)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_uma7y")
 hframes = 4
 vframes = 4
 
-[node name="Sing2" type="Sprite2D" parent="."]
-position = Vector2(144, -73)
+[node name="Sing2" type="Sprite2D" parent="FolderSign"]
+position = Vector2(174.5, -137)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_uma7y")
 hframes = 4
 vframes = 4
 frame = 3
 
-[node name="Sign3" type="Sprite2D" parent="."]
-position = Vector2(48, -73)
+[node name="Sign3" type="Sprite2D" parent="FolderSign"]
+position = Vector2(78.5, -137)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_uma7y")
 hframes = 4
 vframes = 4
 frame = 2
 
-[node name="Sign4" type="Sprite2D" parent="."]
-position = Vector2(-80.5, -73)
+[node name="Sign4" type="Sprite2D" parent="FolderSign"]
+position = Vector2(-50, -137)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_uma7y")
 hframes = 4
 vframes = 4
 frame = 1
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_qq0k7")]
-position = Vector2(22.5, 14)
 
 [node name="Rooms" type="Node" parent="."]
 
@@ -108,3 +111,6 @@ dialogue_start = "room4_4"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/Room4_4"]
 shape = SubResource("RectangleShape2D_buoqc")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_qq0k7")]
+position = Vector2(22.5, 14)

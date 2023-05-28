@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bn8w52ip52dbh"]
+[gd_scene load_steps=9 format=3 uid="uid://bn8w52ip52dbh"]
 
 [ext_resource type="PackedScene" uid="uid://2rcoag4y0i20" path="res://scenes/tile_map_main.tscn" id="1_b22ig"]
 [ext_resource type="PackedScene" uid="uid://ud1hphh75ict" path="res://scenes/Player.tscn" id="2_ankuj"]
@@ -9,6 +9,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buoqc"]
 size = Vector2(32, 32.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bu00e"]
+size = Vector2(32, 38)
 
 [node name="World" type="Node2D"]
 position = Vector2(630, 360)
@@ -24,49 +27,6 @@ layer_0/tile_data = PackedInt32Array(-131080, 0, 18, -196600, 131072, 18, -19660
 
 [node name="furniture" parent="." instance=ExtResource("1_b22ig")]
 scale = Vector2(2, 2)
-
-[node name="FloadSign" type="Label" parent="."]
-offset_left = -30.5
-offset_top = 64.0
-offset_right = 65.5
-offset_bottom = 101.0
-theme_override_fonts/font = ExtResource("3_mcjjq")
-theme_override_font_sizes/font_size = 25
-text = "↙️2     4↗️"
-
-[node name="Sign1" type="Sprite2D" parent="."]
-position = Vector2(-176, -73)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("4_sg3db")
-hframes = 4
-vframes = 4
-
-[node name="Sing2" type="Sprite2D" parent="."]
-position = Vector2(144, -73)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("4_sg3db")
-hframes = 4
-vframes = 4
-frame = 3
-
-[node name="Sign3" type="Sprite2D" parent="."]
-position = Vector2(48, -73)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("4_sg3db")
-hframes = 4
-vframes = 4
-frame = 2
-
-[node name="Sign4" type="Sprite2D" parent="."]
-position = Vector2(-80.5, -73)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("4_sg3db")
-hframes = 4
-vframes = 4
-frame = 1
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_ankuj")]
-position = Vector2(22.5, 14)
 
 [node name="Rooms" type="Node" parent="."]
 
@@ -108,3 +68,63 @@ dialogue_start = "room3_4"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/Room3_4"]
 shape = SubResource("RectangleShape2D_buoqc")
+
+[node name="FolderSign" type="ColorRect" parent="."]
+offset_left = -31.0
+offset_top = 61.0
+offset_right = 67.0
+offset_bottom = 101.0
+color = Color(1, 1, 1, 0)
+
+[node name="FloadSign" type="Label" parent="FolderSign"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 96.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("3_mcjjq")
+theme_override_font_sizes/font_size = 25
+text = "↙️2     4↗️"
+
+[node name="Sign1" type="Sprite2D" parent="FolderSign"]
+position = Vector2(-145, -134)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_sg3db")
+hframes = 4
+vframes = 4
+
+[node name="Sing2" type="Sprite2D" parent="FolderSign"]
+position = Vector2(175, -134)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_sg3db")
+hframes = 4
+vframes = 4
+frame = 3
+
+[node name="Sign3" type="Sprite2D" parent="FolderSign"]
+position = Vector2(79, -134)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_sg3db")
+hframes = 4
+vframes = 4
+frame = 2
+
+[node name="Sign4" type="Sprite2D" parent="FolderSign"]
+position = Vector2(-49.5, -134)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_sg3db")
+hframes = 4
+vframes = 4
+frame = 1
+
+[node name="Actionable" parent="." instance=ExtResource("5_3e87e")]
+position = Vector2(78.5, 84)
+dialogue_resource = ExtResource("6_nvdum")
+dialogue_start = "corridor_3_to_4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+position = Vector2(1.5, -7)
+shape = SubResource("RectangleShape2D_bu00e")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_ankuj")]
+position = Vector2(22.5, 14)
