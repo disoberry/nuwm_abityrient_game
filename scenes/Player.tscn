@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://ud1hphh75ict"]
+[gd_scene load_steps=34 format=3 uid="uid://ud1hphh75ict"]
 
 [ext_resource type="Texture2D" uid="uid://t2g2uogdc87s" path="res://assets/character_texture_compresed.tres" id="1_bd2hi"]
 [ext_resource type="Script" path="res://scritps/Player.gd" id="1_fscde"]
@@ -233,6 +233,9 @@ transitions = ["idle", "walk", SubResource("AnimationNodeStateMachineTransition_
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_30j17"]
 texture = ExtResource("4_huboe")
 
+[sub_resource type="SystemFont" id="SystemFont_m1xu2"]
+font_names = PackedStringArray("Lucida Console")
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(2, 2)
 script = ExtResource("1_fscde")
@@ -282,3 +285,19 @@ offset_right = 36.0
 offset_bottom = -6.0
 theme_override_font_sizes/font_size = 8
 theme_override_styles/normal = SubResource("StyleBoxTexture_30j17")
+
+[node name="Hint_Room" type="Label" parent="."]
+visible = false
+offset_left = -7.0
+offset_top = 13.5
+offset_right = 16.0
+offset_bottom = 25.5
+theme_override_fonts/font = SubResource("SystemFont_m1xu2")
+theme_override_font_sizes/font_size = 8
+text = "108"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+position_smoothing_speed = 165.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true

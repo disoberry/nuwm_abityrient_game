@@ -17,7 +17,9 @@ func _physics_process(_delta):
 	# Movement And Dialogue System
 	
 	if IsDr.is_dialogue_running == "true":
+		velocity = Vector2.ZERO 
 		hint_e_popup.hide()
+
 		pass
 	else:
 		velocity = Vector2.ZERO 

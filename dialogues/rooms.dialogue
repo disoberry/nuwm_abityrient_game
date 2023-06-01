@@ -1,53 +1,18 @@
-~ room4_1
+~ ladder_floar1
 set IsDr.is_dialogue_running = "true"
-You: Хочеш зайти?
+You: Піднятися на 2 поверх?
 - Так!
-	do TransitionScene.change_scene("res://scenes/World_1.tscn", "4", "1")
+	do TransitionScene.change_scene("res://scenes/Nuwm/Floar_1/corridor2.tscn", "0", "2")
 - Не зараз.
 set IsDr.is_dialogue_running = "false"
 => END!
 
-~ room4_2
+~ room_100
 set IsDr.is_dialogue_running = "true"
-You: Хочеш зайти?
-- Так!
-	do TransitionScene.change_scene("res://scenes/World_2.tscn", "4", "2")
-- Не зараз.
+You: Тут закрито.
+- Ок.
 set IsDr.is_dialogue_running = "false"
 => END!
-
-~ room4_3
-set IsDr.is_dialogue_running = "true"
-You: Хочеш зайти?
-- Так!
-	do TransitionScene.change_scene("res://scenes/World_1.tscn", "4", "3")
-- Не зараз.
-set IsDr.is_dialogue_running = "false"
-=> END!
-
-~ room4_4
-set IsDr.is_dialogue_running = "true"
-You: Хочеш зайти?
-- Так!
-	do TransitionScene.change_scene("res://scenes/World_1.tscn", "4", "4")
-- Не зараз.
-set IsDr.is_dialogue_running = "false"
-=> END!
-
-
-
-~ room3_1
-set IsDr.is_dialogue_running = "true"
-You: Двері закриті.
-- Постукати в двері.
-	- Ніхто не відповідає.
-- Полишити цю кімнату.
-set IsDr.is_dialogue_running = "false"
-=> END!
-
-
-
-
 
 ~ corridor_3_to_4
 set IsDr.is_dialogue_running = "true"
