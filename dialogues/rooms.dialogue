@@ -35,11 +35,22 @@ You: Тут закрито.
 set IsDr.is_dialogue_running = "false"
 => END!
 
-~ corridor_3_to_4
+
+~ room_102
 set IsDr.is_dialogue_running = "true"
-You: Піднятися на 4 поверх?
-- Так!
-	do TransitionScene.change_scene("res://scenes/Floar_4.tscn", "4", "0")
-- Не зараз!
+You: Зайти в 102 кабінет?
+- Так.
+	do TransitionScene.change_scene("res://scenes/rooms/102.tscn", "1", "102")
+- Не зараз.
 set IsDr.is_dialogue_running = "false"
 => END!
+
+~ room_103
+set IsDr.is_dialogue_running = "true"
+You: Зайти в 103 кабінет?
+- Так.
+	do TransitionScene.change_scene("res://scenes/rooms/103.tscn", "1", "103")
+- Не зараз.
+set IsDr.is_dialogue_running = "false"
+=> END!
+

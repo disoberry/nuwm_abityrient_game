@@ -1,6 +1,6 @@
 extends TextureRect
 
-@onready var mapbuttonv: TextureRect = $MapButton
+
 
 var _texture1 = preload("res://assets/mapscreens/floar1map.png")
 var _texture2 = preload("res://assets/mapscreens/floar2map.png")

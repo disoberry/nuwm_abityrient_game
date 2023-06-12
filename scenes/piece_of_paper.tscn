@@ -36,9 +36,10 @@ text = "
 Мені здається в Університеті
 з'явився викладач-самозванець.
 
-Із доказів я маю тільки його
-Червону краватку.
-Надіюсь на тебе!
+Приходь до 1 корпусу 
+нашого університету,
+Я залишив записку
+при вході, на столі.
 
 ㅤㅤㅤㅤㅤㅤㅤВикладач №1
 "
@@ -58,11 +59,17 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_xfs63")
 text = "Продовжити"
 
 [node name="Hint_M" type="Label" parent="."]
+layout_mode = 0
 offset_left = 731.0
 offset_top = 164.0
-offset_right = 1019.0
-offset_bottom = 269.0
+offset_right = 1132.0
+offset_bottom = 392.0
 theme_override_font_sizes/font_size = 30
-text = "Натискай M, щоб відкрити мапу"
+text = "Керування на (WASD) або стрілочки
+
+Натискай M, щоб відкрити мапу
+
+Для взаємодії з предметами
+використовуй кнопку E"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
