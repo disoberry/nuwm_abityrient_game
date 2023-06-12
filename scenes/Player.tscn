@@ -1,10 +1,11 @@
-[gd_scene load_steps=35 format=3 uid="uid://ud1hphh75ict"]
+[gd_scene load_steps=36 format=3 uid="uid://ud1hphh75ict"]
 
 [ext_resource type="Texture2D" uid="uid://t2g2uogdc87s" path="res://assets/character_texture_compresed.tres" id="1_bd2hi"]
 [ext_resource type="Script" path="res://scritps/Player.gd" id="1_fscde"]
 [ext_resource type="Script" path="res://scritps/IsDR.gd" id="3_2vuj5"]
 [ext_resource type="Texture2D" uid="uid://dbjhtt7kxux25" path="res://assets/E_hint.png" id="4_huboe"]
 [ext_resource type="PackedScene" uid="uid://duwakpkres257" path="res://scenes/map_button.tscn" id="5_5sdsc"]
+[ext_resource type="PackedScene" uid="uid://6jmb3ndgir2g" path="res://scenes/audio_stream.tscn" id="6_h0mf6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ied3"]
 size = Vector2(10, 4)
@@ -315,3 +316,5 @@ zoom = Vector2(2, 2)
 position_smoothing_speed = 165.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("6_h0mf6")]
