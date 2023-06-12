@@ -9,7 +9,7 @@ func _ready():
 
 
 func _on_start_button_pressed():
-	TransitionScene.change_scene("res://scenes/World_1.tscn", "4", "1")
+	get_tree().change_scene_to_file("res://scenes/piece_of_paper.tscn")	
 
 func _on_extras_button_pressed():
 	pass # Replace with function body.

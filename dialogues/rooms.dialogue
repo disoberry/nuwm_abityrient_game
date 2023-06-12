@@ -7,6 +7,27 @@ You: Піднятися на 2 поверх?
 set IsDr.is_dialogue_running = "false"
 => END!
 
+~ ladder_floar2
+set IsDr.is_dialogue_running = "true"
+You: Куди ти хочеш піти?
+- На 1 поверх!
+	do TransitionScene.change_scene("res://scenes/Nuwm/Floar_1/corridor1.tscn", "0", "1")
+- На 3 поверх!
+	do TransitionScene.change_scene("res://scenes/Nuwm/Floar_1/corridor3.tscn", "0", "3")
+- Нікуди.
+set IsDr.is_dialogue_running = "false"
+=> END!
+
+~ ladder_floar3
+set IsDr.is_dialogue_running = "true"
+You: Спуститися на 2 поверх?
+- Так!
+	do TransitionScene.change_scene("res://scenes/Nuwm/Floar_1/corridor2.tscn", "0", "2")
+- Не зараз.
+set IsDr.is_dialogue_running = "false"
+=> END!
+
+
 ~ room_100
 set IsDr.is_dialogue_running = "true"
 You: Тут закрито.

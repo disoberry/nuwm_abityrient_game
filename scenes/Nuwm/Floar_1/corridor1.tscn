@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bidpggicpionn"]
+[gd_scene load_steps=12 format=3 uid="uid://bidpggicpionn"]
 
 [ext_resource type="PackedScene" uid="uid://2rcoag4y0i20" path="res://scenes/tile_map_main.tscn" id="1_k7f1m"]
 [ext_resource type="PackedScene" uid="uid://ud1hphh75ict" path="res://scenes/Player.tscn" id="2_oc3d3"]
@@ -8,10 +8,19 @@
 [ext_resource type="Resource" uid="uid://st3fdm1sqgfl" path="res://dialogues/rooms.dialogue" id="6_7wu76"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g6rp8"]
-size = Vector2(192, 127)
+size = Vector2(192, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hdoig"]
+size = Vector2(137, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a26cg"]
+size = Vector2(128, 112)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_51pwi"]
 size = Vector2(32, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pf3w2"]
+size = Vector2(27, 32)
 
 [node name="corridor1" type="Node2D"]
 
@@ -28,7 +37,7 @@ layer_0/tile_data = PackedInt32Array(-65541, 65536, 18, -65540, 262144, 22, -655
 [node name="furniture" parent="." instance=ExtResource("1_k7f1m")]
 position = Vector2(230, 213)
 scale = Vector2(2, 2)
-layer_0/tile_data = PackedInt32Array(-589785, 65536, 19, -589784, 65536, 19, -589783, 65536, 19, -589782, 65536, 19, -589781, 65536, 19, -589780, 65536, 19, -655316, 65536, 19, -655317, 65536, 19, -655318, 65536, 19, -655319, 65536, 19, -655320, 65536, 19, -655321, 65536, 19, -720857, 65536, 19, -720856, 65536, 19, -720855, 65536, 19, -720854, 65536, 19, -720853, 65536, 19, -720852, 65536, 19, -524249, 65536, 19, -524248, 65536, 19, -524247, 65536, 19, -524246, 65536, 19, -524245, 65536, 19, -524244, 65536, 19)
+layer_0/tile_data = PackedInt32Array(-589785, 65536, 19, -589784, 65536, 19, -589783, 65536, 19, -589782, 65536, 19, -589781, 65536, 19, -589780, 65536, 19, -655316, 65536, 19, -655317, 65536, 19, -655318, 65536, 19, -655319, 65536, 19, -655320, 65536, 19, -655321, 65536, 19, -720857, 65536, 19, -720856, 65536, 19, -720855, 65536, 19, -720854, 65536, 19, -720853, 65536, 19, -720852, 65536, 19, -524249, 65536, 19, -524248, 65536, 19, -524247, 65536, 19, -524246, 65536, 19, -524245, 65536, 19, -524244, 65536, 19, -458713, 65536, 19, -458712, 65536, 19, -458711, 65536, 19, -458710, 65536, 19, -458709, 65536, 19, -458708, 65536, 19, -262095, 65536, 25, -262094, 65536, 25, -262093, 65536, 25, -262092, 65536, 25, -262091, 65536, 25, -262090, 65536, 25, -65482, 458752, 23, 54, 393216, 23, -65484, 458752, 23, 52, 393216, 23, -65486, 458752, 23, 50, 393216, 23, -131018, 393216, 24, -131020, 393216, 24, -131022, 393216, 24, -65500, 458752, 23, 36, 393216, 23)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_oc3d3")]
 position = Vector2(1586, 281)
@@ -56,6 +65,30 @@ offset_bottom = 1240.0
 rotation = 1.57079
 texture = ExtResource("4_618nw")
 
+[node name="TextureRect5" type="TextureRect" parent="TextureRect2"]
+layout_mode = 0
+offset_left = 195.0
+offset_top = -546.0
+offset_right = 387.0
+offset_bottom = 96.0
+rotation = 1.57079
+texture = ExtResource("4_618nw")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = 68.0
+offset_top = 344.0
+offset_right = 246.0
+offset_bottom = 1628.0
+rotation = 4.71243
+texture = ExtResource("4_618nw")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+offset_left = 1478.0
+offset_top = -586.0
+offset_right = 1715.0
+offset_bottom = -168.0
+texture = ExtResource("4_618nw")
+
 [node name="FolderRooms" type="ColorRect" parent="."]
 offset_left = 341.0
 offset_top = 42.0
@@ -69,8 +102,26 @@ dialogue_resource = ExtResource("6_7wu76")
 dialogue_start = "ladder_floar1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FolderRooms/Stairs"]
-position = Vector2(86, 53.5)
+position = Vector2(86, 45)
 shape = SubResource("RectangleShape2D_g6rp8")
+
+[node name="Stairs2" parent="FolderRooms" instance=ExtResource("5_6atht")]
+position = Vector2(1166, -631)
+dialogue_resource = ExtResource("6_7wu76")
+dialogue_start = "ladder_floar1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FolderRooms/Stairs2"]
+position = Vector2(39.5, 35.5)
+shape = SubResource("RectangleShape2D_hdoig")
+
+[node name="Stairs3" parent="FolderRooms" instance=ExtResource("5_6atht")]
+position = Vector2(49, -169)
+dialogue_resource = ExtResource("6_7wu76")
+dialogue_start = "ladder_floar1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FolderRooms/Stairs3"]
+position = Vector2(64, 46)
+shape = SubResource("RectangleShape2D_a26cg")
 
 [node name="100" parent="FolderRooms" instance=ExtResource("5_6atht")]
 position = Vector2(1088, 0)
@@ -118,11 +169,84 @@ position = Vector2(1, -0.5)
 shape = SubResource("RectangleShape2D_51pwi")
 
 [node name="108" parent="FolderRooms" instance=ExtResource("5_6atht")]
+position = Vector2(-2, 2)
 dialogue_resource = ExtResource("6_7wu76")
 dialogue_start = "room_100"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FolderRooms/108"]
-position = Vector2(1, -0.5)
+position = Vector2(3, -2)
+shape = SubResource("RectangleShape2D_51pwi")
+
+[node name="101" parent="FolderRooms" instance=ExtResource("5_6atht")]
+position = Vector2(990, 122)
+dialogue_resource = ExtResource("6_7wu76")
+dialogue_start = "room_100"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FolderRooms/101"]
+position = Vector2(3, -2)
+shape = SubResource("RectangleShape2D_51pwi")
+
+[node name="102" parent="FolderRooms" instance=ExtResource("5_6atht")]
+position = Vector2(670, 123)
+dialogue_resource = ExtResource("6_7wu76")
+dialogue_start = "room_100"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FolderRooms/102"]
+position = Vector2(3, -2)
+shape = SubResource("RectangleShape2D_51pwi")
+
+[node name="103" parent="FolderRooms" instance=ExtResource("5_6atht")]
+position = Vector2(446, 124)
+dialogue_resource = ExtResource("6_7wu76")
+dialogue_start = "room_100"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FolderRooms/103"]
+position = Vector2(3, -2)
+shape = SubResource("RectangleShape2D_51pwi")
+
+[node name="104" parent="FolderRooms" instance=ExtResource("5_6atht")]
+position = Vector2(286, 124)
+dialogue_resource = ExtResource("6_7wu76")
+dialogue_start = "room_100"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FolderRooms/104"]
+position = Vector2(3, -2)
+shape = SubResource("RectangleShape2D_51pwi")
+
+[node name="105" parent="FolderRooms" instance=ExtResource("5_6atht")]
+position = Vector2(222, 124)
+dialogue_resource = ExtResource("6_7wu76")
+dialogue_start = "room_100"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FolderRooms/105"]
+position = Vector2(3, -2)
+shape = SubResource("RectangleShape2D_51pwi")
+
+[node name="106dot1" parent="FolderRooms" instance=ExtResource("5_6atht")]
+position = Vector2(94, 124)
+dialogue_resource = ExtResource("6_7wu76")
+dialogue_start = "room_100"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FolderRooms/106dot1"]
+position = Vector2(3, -2)
+shape = SubResource("RectangleShape2D_51pwi")
+
+[node name="106dot2" parent="FolderRooms" instance=ExtResource("5_6atht")]
+position = Vector2(-2, 124)
+dialogue_resource = ExtResource("6_7wu76")
+dialogue_start = "room_100"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FolderRooms/106dot2"]
+position = Vector2(3, -2)
+shape = SubResource("RectangleShape2D_51pwi")
+
+[node name="107" parent="FolderRooms" instance=ExtResource("5_6atht")]
+position = Vector2(-130, 124)
+dialogue_resource = ExtResource("6_7wu76")
+dialogue_start = "room_100"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FolderRooms/107"]
+position = Vector2(3, -2)
 shape = SubResource("RectangleShape2D_51pwi")
 
 [node name="WC2" parent="FolderRooms" instance=ExtResource("5_6atht")]
@@ -142,3 +266,66 @@ dialogue_start = "room_100"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FolderRooms/WC1"]
 position = Vector2(1, -0.5)
 shape = SubResource("RectangleShape2D_51pwi")
+
+[node name="115" parent="FolderRooms" instance=ExtResource("5_6atht")]
+position = Vector2(1361, -232)
+dialogue_resource = ExtResource("6_7wu76")
+dialogue_start = "room_100"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FolderRooms/115"]
+position = Vector2(-1.5, 4)
+shape = SubResource("RectangleShape2D_pf3w2")
+
+[node name="116" parent="FolderRooms" instance=ExtResource("5_6atht")]
+position = Vector2(1361, -424)
+dialogue_resource = ExtResource("6_7wu76")
+dialogue_start = "room_100"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FolderRooms/116"]
+position = Vector2(-1.5, 4)
+shape = SubResource("RectangleShape2D_pf3w2")
+
+[node name="117" parent="FolderRooms" instance=ExtResource("5_6atht")]
+position = Vector2(1462, -584)
+dialogue_resource = ExtResource("6_7wu76")
+dialogue_start = "room_100"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FolderRooms/117"]
+position = Vector2(-1.5, 4)
+shape = SubResource("RectangleShape2D_pf3w2")
+
+[node name="118" parent="FolderRooms" instance=ExtResource("5_6atht")]
+position = Vector2(1462, -488)
+dialogue_resource = ExtResource("6_7wu76")
+dialogue_start = "room_100"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FolderRooms/118"]
+position = Vector2(-1.5, 4)
+shape = SubResource("RectangleShape2D_pf3w2")
+
+[node name="119" parent="FolderRooms" instance=ExtResource("5_6atht")]
+position = Vector2(1462, -296)
+dialogue_resource = ExtResource("6_7wu76")
+dialogue_start = "room_100"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FolderRooms/119"]
+position = Vector2(-1.5, 4)
+shape = SubResource("RectangleShape2D_pf3w2")
+
+[node name="120" parent="FolderRooms" instance=ExtResource("5_6atht")]
+position = Vector2(1462, -104)
+dialogue_resource = ExtResource("6_7wu76")
+dialogue_start = "room_100"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FolderRooms/120"]
+position = Vector2(-1.5, 4)
+shape = SubResource("RectangleShape2D_pf3w2")
+
+[node name="121" parent="FolderRooms" instance=ExtResource("5_6atht")]
+position = Vector2(1462, -8)
+dialogue_resource = ExtResource("6_7wu76")
+dialogue_start = "room_100"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FolderRooms/121"]
+position = Vector2(-1.5, 4)
+shape = SubResource("RectangleShape2D_pf3w2")

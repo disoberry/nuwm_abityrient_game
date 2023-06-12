@@ -1,9 +1,10 @@
-[gd_scene load_steps=34 format=3 uid="uid://ud1hphh75ict"]
+[gd_scene load_steps=35 format=3 uid="uid://ud1hphh75ict"]
 
 [ext_resource type="Texture2D" uid="uid://t2g2uogdc87s" path="res://assets/character_texture_compresed.tres" id="1_bd2hi"]
 [ext_resource type="Script" path="res://scritps/Player.gd" id="1_fscde"]
 [ext_resource type="Script" path="res://scritps/IsDR.gd" id="3_2vuj5"]
 [ext_resource type="Texture2D" uid="uid://dbjhtt7kxux25" path="res://assets/E_hint.png" id="4_huboe"]
+[ext_resource type="PackedScene" uid="uid://duwakpkres257" path="res://scenes/map_button.tscn" id="5_5sdsc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ied3"]
 size = Vector2(10, 4)
@@ -137,6 +138,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_ojdny"]
 resource_name = "walk_up"
 length = 0.6
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -235,6 +237,7 @@ texture = ExtResource("4_huboe")
 
 [sub_resource type="SystemFont" id="SystemFont_m1xu2"]
 font_names = PackedStringArray("Lucida Console")
+subpixel_positioning = 0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(2, 2)
@@ -295,6 +298,17 @@ offset_bottom = 25.5
 theme_override_fonts/font = SubResource("SystemFont_m1xu2")
 theme_override_font_sizes/font_size = 8
 text = "108"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="MapButton" parent="CanvasLayer" instance=ExtResource("5_5sdsc")]
+visible = false
+offset_left = 33.0
+offset_top = 129.0
+offset_right = 514.0
+offset_bottom = 442.0
+scale = Vector2(1.47951, 1.34763)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)

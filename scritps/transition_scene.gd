@@ -11,5 +11,7 @@ func change_scene(target: String, dis_number: String, room_number: String) -> vo
 	$AnimationPlayer.play_backwards('dissolve')
 	if dis_number == "1":
 		$TextInfo.text = (room_number + " Кімната")
-	else:
+	if dis_number == "0":
 		$TextInfo.text = (room_number + " Поверх")
+	if dis_number == "8":
+		$TextInfo.text = ("")

@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://bwvropetr1swv"]
+
+[ext_resource type="Texture2D" uid="uid://3dr34e05fwi" path="res://assets/paper_piece.png" id="1_1cxpt"]
+[ext_resource type="Script" path="res://scritps/piece_of_paper.gd" id="2_83sjc"]
+[ext_resource type="FontFile" uid="uid://d0ylfg4gdaxje" path="res://assets/fonts/Shentox AA.ttf" id="2_nolvi"]
+[ext_resource type="StyleBox" uid="uid://bp7hyo14cdrs2" path="res://styles/continue_button_hover_style.tres" id="3_l3wsf"]
+[ext_resource type="StyleBox" uid="uid://j0bnfpnkpf27" path="res://styles/continue_button_hover2_style.tres" id="4_jifpw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kloou"]
+font = ExtResource("2_nolvi")
+font_size = 26
+font_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.498039, 0.498039, 0.498039, 0.662745)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xfs63"]
+
+[node name="PieceOfPaper" type="TextureRect"]
+offset_left = -62.0
+offset_top = -52.0
+offset_right = 781.0
+offset_bottom = 759.0
+texture = ExtResource("1_1cxpt")
+expand_mode = 3
+script = ExtResource("2_83sjc")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 202.0
+offset_right = 631.0
+offset_bottom = 601.0
+theme_override_font_sizes/font_size = 24
+text = "
+Вітаю, студенте!
+
+Мені здається в Університеті
+з'явився викладач-самозванець.
+
+Із доказів я маю тільки його
+Червону краватку.
+Надіюсь на тебе!
+
+ㅤㅤㅤㅤㅤㅤㅤВикладач №1
+"
+label_settings = SubResource("LabelSettings_kloou")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 985.0
+offset_top = 631.0
+offset_right = 1259.0
+offset_bottom = 699.0
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = ExtResource("3_l3wsf")
+theme_override_styles/hover = ExtResource("4_jifpw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xfs63")
+text = "Продовжити"
+
+[node name="Hint_M" type="Label" parent="."]
+offset_left = 731.0
+offset_top = 164.0
+offset_right = 1019.0
+offset_bottom = 269.0
+theme_override_font_sizes/font_size = 30
+text = "Натискай M, щоб відкрити мапу"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

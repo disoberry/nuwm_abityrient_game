@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://duwakpkres257"]
+
+[ext_resource type="Texture2D" uid="uid://ipfuf50ir6jp" path="res://assets/mapscreens/floar1map.png" id="1_bcoxd"]
+[ext_resource type="Script" path="res://scritps/map_button.gd" id="2_awg0c"]
+[ext_resource type="StyleBox" uid="uid://bxjg8a7774ikb" path="res://styles/menu_button_style.tres" id="2_sawpi"]
+[ext_resource type="StyleBox" uid="uid://dhdeyuvnrgk61" path="res://styles/menu_button_hover_style.tres" id="3_08obj"]
+
+[node name="MapButton" type="TextureRect"]
+offset_right = 540.0
+offset_bottom = 319.0
+scale = Vector2(1.04486, 1.17185)
+texture = ExtResource("1_bcoxd")
+expand_mode = 1
+script = ExtResource("2_awg0c")
+
+[node name="Floar 1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 597.0
+offset_top = 80.0
+offset_right = 761.0
+offset_bottom = 105.0
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("2_sawpi")
+theme_override_styles/hover = ExtResource("3_08obj")
+text = "1"
+
+[node name="Floar 2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 597.0
+offset_top = 113.0
+offset_right = 761.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("2_sawpi")
+theme_override_styles/hover = ExtResource("3_08obj")
+text = "2"
+
+[node name="Floar 3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 597.0
+offset_top = 151.0
+offset_right = 761.0
+offset_bottom = 175.0
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("2_sawpi")
+theme_override_styles/hover = ExtResource("3_08obj")
+text = "3"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 552.0
+offset_top = 191.0
+offset_right = 746.0
+offset_bottom = 289.0
+theme_override_font_sizes/font_size = 21
+text = "Тисни на номер поверху,
+щоб переглянути його на карті"
+
+[connection signal="pressed" from="Floar 1" to="." method="_on_floar_1_pressed"]
+[connection signal="pressed" from="Floar 2" to="." method="_on_floar_2_pressed"]
+[connection signal="pressed" from="Floar 3" to="." method="_on_floar_3_pressed"]
