@@ -6,6 +6,9 @@ var maptogglebool = "0"
 
 
 const SPEED = 5.0
+
+# Взаємодія із об'єктами та картою
+
 func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_pressed("interact"):
 		var actionables = actionable_finder.get_overlapping_areas()
@@ -26,7 +29,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 
 
 func _physics_process(_delta):
-	# Movement And Dialogue System
+	# Система Діалогу та Переміщення
 	
 	
 	if IsDr.is_dialogue_running == "true":
@@ -46,13 +49,13 @@ func _physics_process(_delta):
 			velocity.y -= 1.0
 		velocity = velocity.normalized()
 		
-		# Hint Pop-up
+		# Підказка коли підходиш до об'єкта з яким можна взаємодіяти
 		hint_e_popup.hide()
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:
 			hint_e_popup.show()
 	
-	# Animation
+	# Анімація
 	
 	if velocity == Vector2.ZERO:
 		$AnimationTree.get("parameters/playback").travel("idle")
@@ -61,7 +64,7 @@ func _physics_process(_delta):
 		$AnimationTree.set("parameters/idle/blend_position", velocity)
 		$AnimationTree.set("parameters/walk/blend_position", velocity)
 	
-
+# Основна функція переміщення
 	move_and_collide(velocity * SPEED)
 
 	

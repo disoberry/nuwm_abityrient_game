@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1wsom7ldcnk5"]
+[gd_scene load_steps=11 format=3 uid="uid://b1wsom7ldcnk5"]
 
 [ext_resource type="Script" path="res://scritps/menu.gd" id="1_3l5in"]
 [ext_resource type="StyleBox" uid="uid://bxjg8a7774ikb" path="res://styles/menu_button_style.tres" id="2_xojlq"]
 [ext_resource type="StyleBox" uid="uid://dhdeyuvnrgk61" path="res://styles/menu_button_hover_style.tres" id="3_3r4ck"]
+[ext_resource type="PackedScene" uid="uid://6jmb3ndgir2g" path="res://scenes/audio_stream.tscn" id="4_cec5l"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fr406"]
 
@@ -74,6 +75,8 @@ theme_override_styles/hover = ExtResource("3_3r4ck")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_a2ipb")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0g2hu")
 text = "Exit"
+
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("4_cec5l")]
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExtrasButton" to="." method="_on_extras_button_pressed"]
