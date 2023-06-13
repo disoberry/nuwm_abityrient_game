@@ -48,5 +48,10 @@ frame = 109
 scale = Vector2(2, 2)
 layer_0/tile_data = PackedInt32Array(131076, 393216, 25, 4, 393216, 25, -131068, 393216, 25, -196612, 196608, 23, -262144, 196608, 23, -196609, 196608, 23, -262142, 196608, 23)
 
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2(29.202, -2.16309)
+scale = Vector2(2, 2)
+zoom = Vector2(1.977, 1.977)
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_j3c2q")]
-position = Vector2(46.5068, -112.482)
+position = Vector2(46.5069, -112.482)
