@@ -313,6 +313,7 @@ offset_bottom = 442.0
 scale = Vector2(1.47951, 1.34763)
 
 [node name="PausePop" parent="CanvasLayer" instance=ExtResource("7_k6kby")]
+visible = false
 position = Vector2(-412, -69)
 scale = Vector2(1.05229, 1.08362)
 
