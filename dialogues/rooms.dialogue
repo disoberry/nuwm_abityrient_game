@@ -30,7 +30,7 @@ set IsDr.is_dialogue_running = "false"
 
 ~ room_100
 set IsDr.is_dialogue_running = "true"
-You: Тут закрито.
+You: Тут зачинено.
 - Ок.
 set IsDr.is_dialogue_running = "false"
 => END!

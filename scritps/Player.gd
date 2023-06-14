@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
 @onready var hint_e_popup: Label = $Hint_E
 var maptogglebool = "0"
+var pausemeter = "0"
 
 
 const SPEED = 5.0
@@ -10,6 +11,7 @@ const SPEED = 5.0
 # Взаємодія із об'єктами та картою
 
 func _unhandled_input(_event: InputEvent) -> void:
+	
 	if Input.is_action_pressed("interact"):
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:
@@ -26,7 +28,19 @@ func _unhandled_input(_event: InputEvent) -> void:
 		IsDr.is_dialogue_running = "false"
 		maptogglebool = "0"
 		return
-
+		
+	if Input.is_action_pressed("pause"):
+		if pausemeter == "0":
+			maptogglebool = "2"
+			$CanvasLayer/MapButton.hide()
+			$CanvasLayer/PausePop.show()
+			IsDr.is_dialogue_running = "true"
+			pausemeter = "1"
+		elif pausemeter == "1":
+			maptogglebool = "0"
+			$CanvasLayer/PausePop.hide()
+			IsDr.is_dialogue_running = "false"			
+			pausemeter = "0"
 
 func _physics_process(_delta):
 	# Система Діалогу та Переміщення

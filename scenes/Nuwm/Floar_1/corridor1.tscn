@@ -266,6 +266,15 @@ dialogue_start = "room_100"
 position = Vector2(3, -2)
 shape = SubResource("RectangleShape2D_51pwi")
 
+[node name="112" parent="FolderRooms" instance=ExtResource("5_6atht")]
+position = Vector2(-226, 124)
+dialogue_resource = ExtResource("6_7wu76")
+dialogue_start = "room_100"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FolderRooms/112"]
+position = Vector2(3, -2)
+shape = SubResource("RectangleShape2D_51pwi")
+
 [node name="WC2" parent="FolderRooms" instance=ExtResource("5_6atht")]
 position = Vector2(-224, 0)
 dialogue_resource = ExtResource("6_7wu76")

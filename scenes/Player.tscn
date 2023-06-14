@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://ud1hphh75ict"]
+[gd_scene load_steps=37 format=3 uid="uid://ud1hphh75ict"]
 
 [ext_resource type="Texture2D" uid="uid://t2g2uogdc87s" path="res://assets/character_texture_compresed.tres" id="1_bd2hi"]
 [ext_resource type="Script" path="res://scritps/Player.gd" id="1_fscde"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dbjhtt7kxux25" path="res://assets/E_hint.png" id="4_huboe"]
 [ext_resource type="PackedScene" uid="uid://duwakpkres257" path="res://scenes/map_button.tscn" id="5_5sdsc"]
 [ext_resource type="PackedScene" uid="uid://6jmb3ndgir2g" path="res://scenes/audio_stream.tscn" id="6_h0mf6"]
+[ext_resource type="PackedScene" uid="uid://i8cp4banf6pg" path="res://scenes/pause_menu.tscn" id="7_k6kby"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ied3"]
 size = Vector2(10, 4)
@@ -310,6 +311,11 @@ offset_top = 129.0
 offset_right = 514.0
 offset_bottom = 442.0
 scale = Vector2(1.47951, 1.34763)
+
+[node name="PausePop" parent="CanvasLayer" instance=ExtResource("7_k6kby")]
+visible = false
+position = Vector2(-412, 16)
+scale = Vector2(1.05314, 0.889567)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
